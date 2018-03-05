@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<link rel = "stylesheet" type = "text/css" href = "css/bsodStyle.css"/>
+	</head>
+	<body>
+		<div id = "contents">
+			<div id = "header">
+				<h1>WHOOPS! 404 ERROR!</h1>
+			</div>
+			<p>This page is missing or never was written. Double check that you typed the URL correctly. You can wait and see if it becomes available again but it probably won't.</p>
+			<p> * Send us an e-mail to notify us of this and try it later again.</p>
+			<p> * If you want, you can press CTRL+ALT+DEL to restart your computer but it won't do you any good, plus you will lose unsaved information in any program you are running.</p>
+			<br/>
+			<p class = "center">Press any key to continue <span class = "underscore" id = "underscore">_</span></p>
+			<br/>
+			<a href = "./"><p class = "center">return to home</p></a>
+		</div>
+		<script>
+
+			function blink() {
+
+				var underscore = document.getElementById("underscore");
+				
+				if(underscore.className == "underscore")
+					underscore.className = "underscoreHidden";
+				else 
+					underscore.className = "underscore";
+
+				setTimeout(blink, 1000);
+			} // end of blink
+
+			// Start the blinking
+			blink();
+
+
+			window.onkeyup = function(e) {
+
+				e = e || window.event;
+
+		        if (e.keyCode == 116)
+		            return
+		        
+				document.location.href = "./";
+			} // end of keylistener
+		</script>
+	</body>
+</html>
